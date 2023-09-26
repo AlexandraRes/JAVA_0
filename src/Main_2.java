@@ -1,3 +1,4 @@
+// Задание 3.11
 import java.util.Scanner;
 public class Main_2 {
     private String name;
@@ -31,9 +32,13 @@ public class Main_2 {
     }
 
     public static void main(String[] args) {
-        Main_2 Account = new Main_2("Alexandra", 2100000000);
-
-        Account.withdraw(1000);
+        Main_2 Account = new Main_2("Alexandra", 2100000);
+        int n;
+        Scanner input = new Scanner(System.in);
+        System.out.print("\nEnter the withdrawal amount: ");
+        n = input.nextInt();
+        input.close();
+        Account.withdraw(n);
         System.out.println(Account.getBalance());;
     }
 }
