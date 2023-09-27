@@ -39,6 +39,6 @@ public class Main_2 {
         n = input.nextInt();
         input.close();
         Account.withdraw(n);
-        System.out.println(Account.getBalance());;
+        System.out.println(Account.getBalance());
     }
 }

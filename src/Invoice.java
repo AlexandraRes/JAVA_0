@@ -1,48 +1,65 @@
 // Задание 3.12
 import java.util.Scanner;
+import java.text.DecimalFormat;
 public class Invoice {
-    private String part_number;
-    private String part_desc;
-    private int part_purchased;
-    private double part_price;
+    private String partNumber;
+    private String partDesc;
+    private int partPurchased;
+    private double partPrice;
 
     public Invoice(String number, String desc,
                    int purchased, double price){
-        this.part_number = number;
-        this.part_desc = desc;
-        this.part_purchased = purchased;
-        this.part_price = price;
+        this.partNumber = number;
+        this.partDesc = desc;
+        this.partPurchased = purchased;
+        this.partPrice = price;
     }
-    public String getPart_number(){
-        return part_number;
+    public String getPartNumber(){
+        return partNumber;
     }
-    public void setPart_number(String number){
-        this.part_number = number;
+    public void setPartNumber(String number){
+        this.partNumber = number;
     }
-    public String getPart_desc(){
-        return part_desc;
+    public String getPartDesc(){
+        return partDesc;
     }
-    public void setPart_desc(String desc){
-        this.part_desc = desc;
+    public void setPartDesc(String desc){
+        this.partDesc = desc;
     }
-    public int getPart_purchased (){
-        return part_purchased;
+    public int getPartPurchased (){
+        return partPurchased;
     }
-    public void setPart_purchased(int purchased){
-        this.part_purchased = purchased;
+    public void setPartPurchased(int purchased){
+        this.partPurchased = purchased;
     }
-    public double getPart_price(){
-        return part_price;
+    public double getPartPrice(){
+        return partPrice;
     }
-    public void setPart_price(double price){
-        this.part_price = price;
+    public void setPartPrice(double price){
+        this.partPrice = price;
     }
-    public void (double withdrawAmount){
-        if (withdrawAmount < balance) {
-            balance = balance - withdrawAmount;
-        } else {
-            System.out.println("Withdrawal amount exceeded account balance");
+
+    public void getInvoiceAmount (){
+        double sum = partPrice * partPurchased;
+        if (sum < 0){
+            sum = 0;
         }
+        DecimalFormat df = new DecimalFormat("#.00");
+        String formattedSum = df.format(sum);
+        System.out.println("\nThe amount of your receipt: $" + formattedSum);
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int N;
+        double P;
+        System.out.print("\nEnter the number of parts: ");
+        N = input.nextInt();
+        System.out.print("\nThe price for one part is 50$");
+        P = 50;
+        Invoice Account = new Invoice("N154", "for the car", N, P);
+        input.close();
+        Account.getInvoiceAmount();
     }
 
 
