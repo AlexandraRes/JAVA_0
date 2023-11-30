@@ -13,8 +13,8 @@ public class part_5_17 {
             numberProd = scanner.nextInt();
             if (numberProd >= 1 && numberProd <= 5) {
                 System.out.print("Проданное количество: ");
-                int guantitySold = scanner.nextInt();
-                generalPrice += price[numberProd - 1] * guantitySold;
+                int quantitySold = scanner.nextInt();
+                generalPrice += price[numberProd - 1] * quantitySold;
             } else if (numberProd != 0) {
                 System.out.println("Введите корректный номер продукта (1-5) или 0 для завершения.");
             }
